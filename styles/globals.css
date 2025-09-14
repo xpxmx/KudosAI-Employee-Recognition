@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-zayzoon-teal text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-zayzoon-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors shadow-sm hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-zayzoon-teal text-zayzoon-teal px-6 py-3 rounded-lg font-semibold hover:bg-zayzoon-teal hover:text-white transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow;
+  }
+  
+  .points-positive {
+    @apply text-green-600 font-bold;
+  }
+  
+  .points-negative {
+    @apply text-red-600 font-bold;
+  }
+  
+  .points-neutral {
+    @apply text-gray-600 font-bold;
+  }
+}
+
+/* Custom animations */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #00A9A5;
+  animation: confetti-fall 3s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti:nth-child(2n) {
+  background: #FF6F00;
+  animation-delay: 0.1s;
+}
+
+.confetti:nth-child(3n) {
+  background: #9C27B0;
+  animation-delay: 0.2s;
+}
+
+.confetti:nth-child(4n) {
+  background: #10B981;
+  animation-delay: 0.3s;
+}
+
+.confetti:nth-child(5n) {
+  background: #F59E0B;
+  animation-delay: 0.4s;
+}
